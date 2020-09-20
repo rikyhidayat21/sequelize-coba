@@ -1,0 +1,18 @@
+<%- include('Partial/header') %>
+<body>
+    <h1 style="text-align: center;"><b>Subjects Data</b></h1>
+    <a href="/">back to home</a>
+    <table style="text-align: left;" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Subject Name</th>
+        </tr>
+        <% data.forEach(el => { %>
+            <tr>
+                <td><%=el.id%></td>
+                <td><%=el.subject_name%></td>
+            </tr>
+        <% })%>
+    </table>
+</body>
+</html> 

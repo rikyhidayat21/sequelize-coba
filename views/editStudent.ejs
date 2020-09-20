@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+</head>
+<body>
+    <h1 style="text-align: center;"><b>Edit Students Data</b></h1>
+    <h3 style="text-align: center;"> <a href="/students">show all data</a> </h3>
+
+    <form action="/students/<%=data.id%>/edit"  method="POST">
+        <p>First Name</p>
+        <input type="text" name= "first_name" value="<%= data.first_name %>" > <br>
+        <p>Last Name</p>
+        <input type="text" name= "last_name" value= "<%= data.last_name %>" >  <br>
+        <p>Email</p>
+        <input type="text" name= "email" value= "<%= data.email %>" > <br>
+        <p>Gender</p>
+        <label for="male">Male</label>
+        <% if(data.gender == 'male') { %>
+            <input type="radio" name="gender" value="male" checked> <br>
+        <%} else { %>
+            <input type="radio" name="gender" value="male"> <br>
+        <%} %>
+        <label for="female">Female</label>
+        <% if(data.gender == 'female') { %>
+            <input type="radio" name="gender" value="female" checked> <br>
+        <%} else { %>
+            <input type="radio" name="gender" value="female"> <br>
+        <%} %>
+        <input type="date" name= "birth_date" value = "<%= new Date(data.birth_date).toISOString().slice(0,10) %>" ><br>        
+        <input type="submit" value="edit student">
+    </form>
+</body>
+</html> 
